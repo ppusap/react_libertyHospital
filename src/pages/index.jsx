@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import 'C:/Users/S534686/Documents/GDP/my-app/src/css/styles.css';  
+import '../css/styles.css'
 
 const MainPage = () => {
     return(
