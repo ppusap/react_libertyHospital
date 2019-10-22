@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import 'C:/Users/S534686/Documents/GDP/my-app/src/css/styles.css';  
-
+// Updated the Css Path by PP
+import '../css/styles.css'
 
 const Program = () => {
     return(

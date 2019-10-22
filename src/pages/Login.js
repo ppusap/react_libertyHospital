@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 
 //import './css/bootstrap.min.css';
-import 'C:/Users/S534686/Documents/GDP/my-app/src/css/styles.css';  
-
+//Updated CSS path by PP
+//import 'C:/Users/S534686/Documents/GDP/my-app/src/css/styles.css';  
+import '../css/bootstrap.min.css'
 
 
 class Login extends Component {
