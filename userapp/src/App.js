@@ -8,7 +8,7 @@ import { Grants } from './Grants';
 import { NoMatch } from './NoMatch';
 import { Layout } from './components/Layout.js';
 import { NavigationBar } from './components/NavigationBar.js';
-import { Jumbotron } from './components/Jumbotron';
+
 
 
 class App extends Component {
@@ -16,7 +16,6 @@ class App extends Component {
   return (
 <React.Fragment>
   <NavigationBar/>
-  <Jumbotron/>
   <Layout>
   <Router>
     <Switch>

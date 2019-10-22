@@ -5,7 +5,7 @@ import AppLogo from '../assets/AppLogo.jpg'
 
 const Styles = styled.div`
 .jumbo{
-    background: url(${AppLogo}) no-repeat  bottom;
+    background: no-repeat fixed  bottom;
     background-size: cover;
     color: #ccc;
     height: 350px;
@@ -16,22 +16,36 @@ const Styles = styled.div`
     background-color: #000;
     opacity: 0.1;
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: -1;
 }
+h1{
+    position: center;
+    opacity: 0.4;
+    top: 10;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    margin-top:70px;
+}
+
 `
 ;
 
 
 export const Jumbotron = () => (
     <Styles>
-        <Jumbo fluid className="jumbo">
+        <Jumbo fluid>
             <div className="overlay"></div>
-            <container>
-            </container>
+            <Container>
+                <h1 className="display-4">Welcome to the Home Page</h1>
+                
+            </Container>
+            
         </Jumbo>
     </Styles>
 )
