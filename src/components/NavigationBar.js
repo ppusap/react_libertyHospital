@@ -64,6 +64,9 @@ export const NavigationBar = () => (
                         <NavDropdown.Item href="/EditApplication">Edit Application</NavDropdown.Item>
                     </NavDropdown>
                 </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href="/ProgramManagement">Program Management</Nav.Link>
+                </Nav.Item>
             </Nav>
         </Navbar>
     </Styles>
