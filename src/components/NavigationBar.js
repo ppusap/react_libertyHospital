@@ -5,6 +5,7 @@ import AppLogo from '../assets/AppLogo.jpg'
 
 const Styles = styled.div`
 .navbar{
+    
 background-color: #00FF7F;
 }
 .navbar-brand, .navbar-nav .nav-link{
@@ -13,7 +14,7 @@ background-color: #00FF7F;
 &:hover{
 color: white;
 }
-.navbar-brand{
+ .navbar-brand{
     display:flex;
     align-items:center;
 }
@@ -22,9 +23,9 @@ color: white;
 }
 
 .navbar {
-    width: 100%;
-    padding: 10px;
-    position: fixed;
+    width: 99%;
+    padding: 20px;
+    position: relative;
     top: 0;
     left: 0;
     transition: top 0.6s;
@@ -35,7 +36,7 @@ color: white;
 
 export const NavigationBar = () => (
     <Styles>
-        <Navbar navbar-expand="md" >
+        <Navbar navbar-expand="bg" fixed="top" >
             <Navbar.Brand >
                 <a href="#">
                     <img src="https://libertyhospitalfoundation.org/wp-content/uploads/2018/04/FinalAsset-1.png" height="50" width="150" />

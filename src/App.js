@@ -4,10 +4,12 @@ import { BrowserRouter as Router,Route,Switch } from 'react-router-dom';
 import './App.css';
 import { Home } from './Home';
 import { Scholarship } from './Scholarship';
-import { Grants } from './Grants';
+
 import { NoMatch } from './NoMatch';
 import { Layout } from './components/Layout.js';
 import { NavigationBar } from './components/NavigationBar.js';
+import {steps} from './components/MultiStep/Steps';
+import MultiStep from 'react-multistep'
 
 
 
@@ -21,7 +23,8 @@ class App extends Component {
     <Switch>
       <Route exact path="/" component={Home} />
       <Route  path="/Scholarship" component={Scholarship} />
-      <Route  path="/Grants" component={Grants} />
+      <Route  path="/NewApplication" component={() =><MultiStep steps={steps} />} />
+      
       <Route component={NoMatch} />
     </Switch>
   </Router>
