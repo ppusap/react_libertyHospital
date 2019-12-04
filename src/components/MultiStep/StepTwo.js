@@ -44,6 +44,7 @@ export class StepTwo extends React.Component {
     this.handleGenderDemoGraphicsChanged=this.handleGenderDemoGraphicsChanged.bind(this);
     // this.handleClientsChanged=this.handleClientsChanged.bind(this)
     this.handleSustainabilityChanged=this.handleSustainabilityChanged.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
     }
     
 
@@ -107,21 +108,25 @@ handleGenderDemoGraphicsChanged(event)
 {
     this.setState({genderDemoGraphics:event.target.value})
 }
+handleSubmit(event){
+  
+}
 
 
     render()
     {
         return(
-            <form>
+            <form onSubmit={this.handleSubmit}> 
 
 
             <div className='row'>
           <div className='six columns'>
-            <label>Project Title</label>
+            <label>Project Title<sup><b>*</b></sup></label>
             <input
               className='u-full-width'
               placeholder='Title'
               type='text'
+              required="true"
               onChange={this.handleProjectTitleChanged}
               value={this.state.projectTitle}
               autoFocus
@@ -201,11 +206,12 @@ handleGenderDemoGraphicsChanged(event)
 
           <div className='row'>
           <div className='six columns'>
-            <label>How will outcomes be evaluated</label>
+            <label>How will outcomes be evaluated<sup><b>*</b></sup></label>
             <input
               className='u-full-width'
               placeholder='Click here to Enter'
               type='Number'
+              required="true"
               onChange={this.handleOutcomesEvalutionChanged}
               value={this.state.outcomesEvalution}
               autoFocus
@@ -243,11 +249,12 @@ handleGenderDemoGraphicsChanged(event)
 
           <div className='row'>
           <div className='six columns'>
-            <label>E-Mail</label>
+            <label>E-Mail<sup><b>*</b></sup></label>
             <input
               className='u-full-width'
               placeholder='E-Mail'
-              type='text'
+              type='email'
+              required="true"
               onChange={this.handleSofSChanged}
               value={this.state.email}
               autoFocus
@@ -304,7 +311,7 @@ handleGenderDemoGraphicsChanged(event)
             />
           </div>
           </div>
-
+          <input type="submit" value="Save" />
 
           </form>
 
@@ -313,3 +320,4 @@ handleGenderDemoGraphicsChanged(event)
 }
 
 export default StepTwo;
+
