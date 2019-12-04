@@ -29,6 +29,7 @@ export class StepOne extends React.Component{
     this.handleFaxChanged = this.handleFaxChanged.bind(this);
     this.handleEmailChanged = this.handleEmailChanged.bind(this);
     this.handleSummaryChanged = this.handleSummaryChanged.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
     }
     
 
@@ -72,17 +73,20 @@ export class StepOne extends React.Component{
    {
        this.setState({summary:event.target.value})
    }
+   handleSubmit(event){
+
+   }
 
     render()
     {
         return(
           <div>
-            <form onSubmit="return validateForm()">
+            <form onSubmit={this.handleSubmit}>
 
 
           <div className='row'>
           <div className='four columns'>
-            <label>Name of the Agency/Agencies(list all the agencies involved in the project):</label>
+            <label>Name of the Agency/Agencies(list all the agencies involved in the project):<sup><b>*</b></sup></label>
             </div>
             <div className='six columns'>
             <input
@@ -90,20 +94,25 @@ export class StepOne extends React.Component{
               type='text'
               onChange={this.handleAgencyNameChanged}
               value={this.state.agencyName}
+              maxlength="15"
+              minlength="3"
+              required="true"
               autoFocus
+
             />
           </div>
              </div>  
          
              <div className='row'>
           <div className='four columns'>
-            <label>Primary Agency</label>
+            <label>Primary Agency<sup><b>*</b></sup></label>
             </div>
             <div className='four columns'>
             <input
               
               placeholder='Primary Agency'
               type='text'
+              required="true"
               onChange={this.handlePrimaryAgencyChanged}
               value={this.state.primaryAgency}
               autoFocus
@@ -120,6 +129,7 @@ export class StepOne extends React.Component{
               className='u-full-width'
               placeholder='Tax ID'
               type='text'
+              
               onChange={this.handleTaxIDChanged}
               value={this.state.taxID}
               autoFocus
@@ -145,7 +155,7 @@ export class StepOne extends React.Component{
           <br/>
           <div className='row'>
           <div className='four columns'>
-            <label>Title</label>
+            <label>Title<sup><b>*</b></sup></label>
             </div>
             <div className='four columns'>
             <input
@@ -154,6 +164,7 @@ export class StepOne extends React.Component{
               type='text'
               onChange={this.handleTitleChanged}
               value={this.state.title}
+              required="true"
               autoFocus
             />
           </div>
@@ -178,13 +189,17 @@ export class StepOne extends React.Component{
           <div className='row'>
           <div className='four columns'>
          
-            <label>Phone</label>
+            <label>Phone<sup><b>*</b></sup></label>
             </div>
           <div className='four columns'>
             <input
               className='u-full-width'
               placeholder='Phone'
-              type='Number'
+              type="text"
+              pattern="[0-9]*"
+              maxlength="10"
+              minlength="10"
+              required="true"
               onChange={this.handlePhoneChanged}
               value={this.state.phone}
               autoFocus
@@ -211,13 +226,14 @@ export class StepOne extends React.Component{
           <br/>
           <div className='row'>
           <div className='four columns'>
-            <label>E-Mail</label>
+            <label>E-Mail<sup><b>*</b></sup></label>
             </div>
             <div className='four columns'>
             <input
               className='u-full-width'
               placeholder='E-Mail'
-              type='text'
+              type='email'
+              required="true"
               onChange={this.handleEmailChanged}
               value={this.state.email}
               autoFocus
@@ -240,15 +256,13 @@ export class StepOne extends React.Component{
             />
           </div>
           </div>
-
-         
+          <p><sup>*</sup><b>Required field</b></p>
+          <input type="submit" value="Save" />
             </form>
-            <button className="btn btn-lg btn-primary " type="save" formAction="home.html">Save</button>
+            {/* <button className="btn btn-lg btn-primary " type="save" formAction="home.html">Save</button> */}
             </div>
            
 
         );
     }
 }
-
-
