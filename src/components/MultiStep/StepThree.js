@@ -16,6 +16,7 @@ export class StepThree extends React.Component
     this.handleTitleChanged = this.handleTitleChanged.bind(this);
     this.handleSignatureChanged = this.handleSignatureChanged.bind(this);
     this.handleDateChanged = this.handleDateChanged.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
     }
    handlePrintedNameChanged(event)
    {
@@ -33,6 +34,9 @@ export class StepThree extends React.Component
    {
        this.setState({date:event.target.value})
    }
+   handleSubmit(event){
+
+   }
    render()
    {
        return(
@@ -46,7 +50,7 @@ export class StepThree extends React.Component
                    this organization does not discriminate on the basis of race, religion, sexual preference, physical circumstances, or national origin. 
                    </h6>
                </div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className='row'>
           <div className='six columns'>
            
@@ -54,6 +58,7 @@ export class StepThree extends React.Component
               className='u-full-width'
               placeholder='Printed Name,Head of Primary Agency'
               type='text'
+              required="true"
               onChange={this.handlePrintedNameChanged}
               value={this.state.printedName}
               autoFocus
@@ -65,6 +70,7 @@ export class StepThree extends React.Component
              className='u-full-width'
              placeholder='Title'
              type='text'
+             required="true"
              onChange={this.handleTitleChanged}
              value={this.state.title}
              autoFocus
@@ -80,6 +86,7 @@ export class StepThree extends React.Component
               className='u-full-width'
               placeholder='Signature,Head of Primary Agency'
               type='text'
+              required="true"
               onChange={this.handleSignatureChanged}
               value={this.state.signature}
               autoFocus
@@ -90,7 +97,7 @@ export class StepThree extends React.Component
             <input
               className='u-full-width'
               placeholder='Date'
-              type='text'
+              type='date'
               onChange={this.handleDateChanged}
               value={this.state.date}
               autoFocus
@@ -100,7 +107,7 @@ export class StepThree extends React.Component
             <br/>
             
           
-              
+            <input type="submit" value="Save" />
              </form>
 
 
